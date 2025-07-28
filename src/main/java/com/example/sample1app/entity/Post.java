@@ -13,14 +13,14 @@ import jakarta.validation.constraints.NotNull;
 public class Post {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+//	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column
 	@NotNull
 	public int id;
 	
 	@Column
 	@NotNull
-	public int userId;
+	public int user_id;
 	
 	@Column
 	public String title;
@@ -31,16 +31,16 @@ public class Post {
 	public Post() {
 		this(0,0,"","");
 	}
-	public Post(int id, int userId, String title, String body) {
+	public Post(int id, int user_id, String title, String body) {
 		super();
 		this.id = id;
-		this.userId = userId;
+		this.user_id = user_id;
 		this.title = title;
 		this.body = body;
 	}
 	
 	@Override
 	public String toString() {
-		return "{id:"+id+", userId:"+userId+", title"+title+", body:"+body+"}";
+		return "{id:"+id+", userId:"+user_id+", title"+title+", body:"+body+"}";
 	}
 }
